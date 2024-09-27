@@ -9,8 +9,9 @@ class Program
         int userNumber = PromptUserNumber();
         int square = SquareNumber(userNumber);
         DisplayResult(userName, square);
-        
-        static void DisplayWelcome()
+
+    }
+    static void DisplayWelcome()
         {
             Console.WriteLine("Welcome to the Program!");
         }
@@ -41,5 +42,4 @@ class Program
             Console.WriteLine($"{userName}, the square of your number is {square}");
 
         }
-    }
 }
