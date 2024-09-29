@@ -4,12 +4,12 @@ using System.IO;
 
 public class Journal
 {
-    public List<Entry>_entries = new List<Entry>();
-
+    public List<Entry>_entries = new List<Entry>(); 
 
 
     public void AddEntry(Entry anEntry)
     {
+        // _entries = new List<Entry>(); create new list every entry
         _entries.Add(anEntry);
     }
 
@@ -23,7 +23,7 @@ public class Journal
 
     public void SaveToFile(string file)
     {
-        using (StreamWriter outputFile = new StreamWriter (file))
+        using (StreamWriter outputFile = new StreamWriter (file, true))
         {   
             
             foreach (Entry info in _entries)
