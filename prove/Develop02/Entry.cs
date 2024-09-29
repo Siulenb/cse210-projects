@@ -7,6 +7,7 @@ public class Entry
     public string _promptText;
     public string _entryText;
 
+    // Class to hold the entries data for Journal class
 
     public void Display()
     {

@@ -9,12 +9,13 @@ public class Journal
 
     public void AddEntry(Entry anEntry)
     {
-        // _entries = new List<Entry>(); create new list every entry
+        // Class method to add entries
         _entries.Add(anEntry);
     }
 
     public void DisplayAll()
     {
+       // Class method to display all entries entered while the program still running.
        foreach (Entry line in _entries)
        {
         Console.WriteLine($"Date: {line._date} - Prompt: {line._promptText}\r\n{line._entryText}");
@@ -23,6 +24,7 @@ public class Journal
 
     public void SaveToFile(string file)
     {
+        // Class Method to save all entries into txt file.
         using (StreamWriter outputFile = new StreamWriter (file, true))
         {   
             
@@ -37,6 +39,7 @@ public class Journal
 
     public void LoadFromFile(string file)
     {
+        // Class method that verify the file exist in the directory and load to iterate a txt file.
         if (!File.Exists(file))
         {
             Console.WriteLine($"File exists: {File.Exists(file)}");

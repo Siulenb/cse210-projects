@@ -6,6 +6,8 @@ public class PromptGenerator
 {
     public List<string> _prompts;
 
+    // Take a prompt question randomly.
+
     public string GetRandomPrompt()
     {
         Random randomQuestions = new Random();

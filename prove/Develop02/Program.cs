@@ -8,6 +8,7 @@ class Program
     {
         // Console.WriteLine("Hello Develop02 World!");
         
+        // the list of Prompt questions
         List<string> listOfPrompts = new List<string>
        {
         "What was the best part of my day? ",
@@ -18,27 +19,22 @@ class Program
        };
 
        Console.WriteLine("Welcome to your journal program!");
+       
+       // Variable for the While loop.
+       bool quit = false;
 
-        bool quit = false;
-
+       // Today date variable run by the Method.
        string todayDate = GetDateTime();
 
-    //    Classes listed
-
-    //    Entry anEntry = new Entry();
-
+        //    Classes listed
+        //    Entry anEntry = new Entry();
        PromptGenerator getPrompt = new PromptGenerator();
-
        Journal theJournal = new Journal();
 
        while (quit != true)
        {
 
-            DisplayMessage();
-            // if statement to trigger the option
-            int optionNumber = SelectedNumber();
-
-            // test program:
+            // beginning test program:
             // PromptGenerator getPrompt = new PromptGenerator();
             // getPrompt._prompts = listOfPrompts;
             // string prompt = getPrompt.GetRandomPrompt();
@@ -57,6 +53,14 @@ class Program
             // theJournal.SaveToFile("ListOfEntries.txt");
             // theJournal.LoadFromFile("ListOfEntries.txt");
 
+
+            // Method that trigger Menu message.
+            DisplayMessage();
+            // Method that obtain the integer input from the user. 
+            int optionNumber = SelectedNumber();
+
+
+            // If statement that respond with the an integer enter to propmt the classes.
             if (optionNumber == 1)
             {
                 // PromptGenerator getPrompt = new PromptGenerator();
@@ -97,6 +101,7 @@ class Program
 
     public static string GetDateTime()
     {
+        // Method to obtain today date.
         DateTime todayDate = DateTime.Today;
         string date = todayDate.ToString("d");
         
@@ -106,7 +111,7 @@ class Program
 
     public static void DisplayMessage()
     {
-        
+        //Method to Display the menu option for the user to know what to select.
         Console.WriteLine("Please select one of the following options:");
         Console.WriteLine("1. Write\r\n2. Display\r\n3. Load\r\n4. Save\r\n5. Quit");
 
@@ -114,6 +119,7 @@ class Program
 
      public static int SelectedNumber()
     {
+        // Method input for user to select the menu by entering an interger
         Console.Write("What would you like to do? (type the number) ");
         int optionNumber = int.Parse(Console.ReadLine());
 
