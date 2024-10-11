@@ -14,13 +14,26 @@ class Program
         
         Console.WriteLine("Memorizer Scripture\r\n");
 
-        Console.WriteLine("Enter the book expression that you want to memorize, for example: Proverbs 3:5-6 ");
+        // The program allow to enter scripture expression and you can enter run an example:
+        Console.WriteLine("Enter the book expression that you want to memorize, for example: Proverbs 3:5-6 \r\nYou click enter to run an exameple:");
         string bookInput = Console.ReadLine();
 
-        // Enter scripture text
-        Console.WriteLine("Enter verse text here:");
+        if (string.IsNullOrEmpty(bookInput))
+        {
+            bookInput = "Proverbs 3:5-6"; // Default if the user doesn't enter anything.
+            Console.WriteLine("Using default scripture name: " + bookInput);
+        }
+
+        // Enter scripture text of all verses that you want to memorize or click enter to run the example default.
+        Console.WriteLine("Enter all verses text here or click enter to run an example:");
         string text = Console.ReadLine();
 
+        if (string.IsNullOrEmpty(text))
+        {
+            // Default if the user doesn't enter anything.
+            text = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."; 
+            Console.WriteLine("Using default verse(s): " + text);
+        }
 
         // Patter of Proverbs 3:5-6
         string pattern = @"(\d*\s*[A-za-z\s]+)\s(\d+):(\d+)(?:-(\d+))?";
