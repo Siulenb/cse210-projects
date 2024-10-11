@@ -11,29 +11,31 @@ class Program
         int verse = 0;
         int endVerse = 0;
         string continueLoop = "";
+        string text = "";
         
         Console.WriteLine("Memorizer Scripture\r\n");
 
         // The program allow to enter scripture expression and you can enter run an example:
-        Console.WriteLine("Enter the book expression that you want to memorize, for example: Proverbs 3:5-6 \r\nYou click enter to run an exameple:");
+        Console.WriteLine("Enter the book expression that you want to memorize, for example: Proverbs 3:5-6 \r\nOr click enter to run an exameple:");
         string bookInput = Console.ReadLine();
 
+        // if statement to check null to run default scripture
         if (string.IsNullOrEmpty(bookInput))
         {
             bookInput = "Proverbs 3:5-6"; // Default if the user doesn't enter anything.
             Console.WriteLine("Using default scripture name: " + bookInput);
-        }
 
-        // Enter scripture text of all verses that you want to memorize or click enter to run the example default.
-        Console.WriteLine("Enter all verses text here or click enter to run an example:");
-        string text = Console.ReadLine();
-
-        if (string.IsNullOrEmpty(text))
-        {
-            // Default if the user doesn't enter anything.
             text = "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."; 
             Console.WriteLine("Using default verse(s): " + text);
         }
+        else
+        {
+            // Enter scripture text of all verses that you want to memorize.
+            Console.WriteLine("Enter all verses text here:");
+            text = Console.ReadLine();
+        }
+        
+        
 
         // Patter of Proverbs 3:5-6
         string pattern = @"(\d*\s*[A-za-z\s]+)\s(\d+):(\d+)(?:-(\d+))?";
