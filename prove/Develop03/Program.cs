@@ -19,7 +19,7 @@ class Program
         Console.WriteLine("Enter the book expression that you want to memorize, for example: Proverbs 3:5-6 \r\nOr click enter to run an exameple:");
         string bookInput = Console.ReadLine();
 
-        // if statement to check null to run default scripture
+        // if statement to check null to run a default scripture.
         if (string.IsNullOrEmpty(bookInput))
         {
             bookInput = "Proverbs 3:5-6"; // Default if the user doesn't enter anything.
@@ -35,7 +35,7 @@ class Program
             text = Console.ReadLine();
         }
         
-        
+        Console.WriteLine();
 
         // Patter of Proverbs 3:5-6
         string pattern = @"(\d*\s*[A-za-z\s]+)\s(\d+):(\d+)(?:-(\d+))?";
