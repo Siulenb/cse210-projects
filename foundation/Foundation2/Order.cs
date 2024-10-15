@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class Order
 {
-    private List<Product> products;
-    private Customer customer;
+    private List<Product> _products;
+    private Customer _customer;
 
     // Constructor
     public Order(List<Product> products, Customer customer)
     {
-        this.products = products;
-        this.customer = customer;
+        _products = products;
+        _customer = customer;
     }
 
     // Calculate the total price of the order (including shipping)
@@ -20,13 +20,13 @@ public class Order
         decimal total = 0;
 
         // Add the total cost of each product
-        foreach (Product product in products)
+        foreach (Product product in _products)
         {
             total += product.GetTotalCost();
         }
 
         // Add shipping cost
-        if (customer.IsInUSA())
+        if (_customer.IsInUSA())
         {
             total += 5; // Shipping cost in USA
         }
@@ -42,7 +42,7 @@ public class Order
     public string GetPackingLabel()
     {
         string label = "Packing Label:\n";
-        foreach (Product product in products)
+        foreach (Product product in _products)
         {
             label += $"Product: {product.GetName()} (ID: {product.GetProductId()})\n";
         }
@@ -52,6 +52,6 @@ public class Order
     // Get the shipping label: customer name and address
     public string GetShippingLabel()
     {
-        return $"Shipping Label:\nCustomer: {customer.GetName()}\nAddress:\n{customer.GetAddress().GetFullAddress()}";
+        return $"Shipping Label:\nCustomer: {_customer.GetName()}\nAddress:\n{_customer.GetAddress().GetFullAddress()}";
     }
 }
