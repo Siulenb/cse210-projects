@@ -18,12 +18,15 @@ public class Product
     }
 
     // Getter methods
-    public string GetName() => _name;
-    public string GetProductId() => _productId;
-    public decimal GetPrice() => _price;
-    public int GetQuantity() => _quantity;
+    // public string GetName() => _name;
+    // public string GetProductId() => _productId;
+    // public decimal GetPrice() => _price;
+    // public int GetQuantity() => _quantity;
 
-    
+    public string GetProductDetail()
+    {
+        return $"Product: {_name} (ID: {_productId})";
+    }
 
     // Calculate the total cost of this product
     public decimal GetTotalCost()

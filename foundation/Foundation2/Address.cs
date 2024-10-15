@@ -19,7 +19,7 @@ public class Address
     }
 
     // Getter methods
-    public string GetCountry() => _country;
+    // public string GetCountry() => _country;
 
     // Check if the address is in the USA
     public bool IsInUSA()

@@ -15,8 +15,13 @@ public class Customer
     }
 
     // Getter methods
-    public string GetName() => _name;
-    public Address GetAddress() => _address;
+    // public string GetName() => _name;
+    // public Address GetAddress() => _address;
+
+    public string GetCustomerDetail()
+    {
+        return $"Customer: {_name}\nAddress:\n{_address.GetFullAddress()}";
+    }
 
     // Check if the customer lives in the USA
     public bool IsInUSA()
