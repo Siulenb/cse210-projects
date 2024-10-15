@@ -23,6 +23,8 @@ public class Product
     public decimal GetPrice() => _price;
     public int GetQuantity() => _quantity;
 
+    
+
     // Calculate the total cost of this product
     public decimal GetTotalCost()
     {
